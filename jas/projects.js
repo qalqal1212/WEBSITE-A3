@@ -4,13 +4,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const zoomedImage = document.querySelector('.zoomed-image');
     const closeButton = document.querySelector('.close-button');
 
+    console.log('Lightbox initialized with', projectItems.length, 'project items');
+
     projectItems.forEach(item => {
         item.addEventListener('click', (e) => {
             e.preventDefault(); // Prevent the default link behavior
 
-            const fullImageUrl = item.getAttribute('data-image');
-            if (fullImageUrl) {
-                zoomedImage.src = fullImageUrl;
+            // Get the image source from the project-image inside this item
+            const imageElement = item.querySelector('.project-image');
+            if (imageElement) {
+                const imageUrl = imageElement.src;
+                console.log('Opening image:', imageUrl);
+                zoomedImage.src = imageUrl;
                 fullscreenOverlay.classList.add('active'); // Show the overlay
                 document.body.style.overflow = 'hidden'; // Prevent scrolling on main body
             }
