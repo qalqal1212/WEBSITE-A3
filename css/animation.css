@@ -48,13 +48,14 @@ html, body {
   padding: 0;
 }
 
-body {
-  background: var(--white);          /* light background */
-  color: var(--black);               /* dark text */
-  font-family: var(--body-font);
-  line-height: 1.5;
+/* Animation page specific styles */
+.animation-body {
+  background-color: #211E1F !important;
+  color: #F4C514 !important;
+  font-family: 'montmid', sans-serif;
+  overflow-x: hidden;
   margin: 0;
-  padding: 0;
+  padding: 0rem;
 }
 
 /* ===========================
@@ -143,14 +144,6 @@ body {
 /* ===========================
    BASE STYLES
 =========================== */
-body {
-    background-color: var(--black);
-    color: var(--white);
-    font-family: 'montmid', sans-serif;
-    overflow-x: hidden;
-    margin: 0;
-    padding: 2rem; /* Global padding for the content area */
-}
 
 .animation-container {
     max-width: 1200px; /* Adjust as needed for overall width */
