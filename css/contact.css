@@ -106,7 +106,7 @@
   /* 🎨 Colours */
   --contact-bg: #f2eddd; /* Background */
   --contact-text: #211e1f; /* Main text */
-  --contact-title: #f4c514; /* Big CONTACT heading */
+  --contact-title: #2f5d97; /* Big CONTACT heading */
   --contact-link: #211e1f;
   --contact-link-hover: #f4c514;
   --contact-border: #211e1f;
@@ -248,6 +248,10 @@
 .contact-form textarea:focus {
   border-color: var(--contact-link-hover);
   box-shadow: 0 0 5px var(--contact-link-hover);
+}
+.contact-form input,
+.contact-form textarea {
+  color: #211e1f; /* dark text */
 }
 
 .contact-form textarea {
