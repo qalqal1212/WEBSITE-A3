@@ -1,0 +1,14 @@
+/* Portfolio Dropdown Styling */
+.group:hover > div {
+  display: block;
+}
+
+.group > div a {
+  color: #f4c514;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.group > div a:hover {
+  background-color: #f4c514;
+  color: #211e1f;
+}

@@ -1,0 +1,214 @@
+/* ===========================
+   COLOUR PALETTE
+=========================== */
+:root {
+  --yellow: #F4C514;
+  --blue:   #2F5D97;
+  --white:  #F2EDDD;
+  --black:  #211E1F;
+
+  --heading-font: 'bungee', sans-serif;
+  --body-font: 'montmid', sans-serif;
+
+  --heading-size: 3rem;
+  --subheading-size: 1.8rem;
+  --body-size: 1rem;
+}
+
+/* ===========================
+   FONTS
+=========================== */
+@font-face {
+  font-family: 'bungee';
+  src: url('../font/Bungee-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'montmid';
+  src: url('../font/Montserrat-Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'montmids';
+  src: url('../font/Montserrat-MediumItalic.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'montsemi';
+  src: url('../font/Montserrat-SemiBold.ttf') format('truetype');
+}
+
+/* ===========================
+   GLOBAL
+=========================== */
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--white);          /* light background */
+  color: var(--black);               /* dark text */
+  font-family: var(--body-font);
+  line-height: 1.5;
+}
+
+/* ===========================
+   NAVIGATION
+=========================== */
+.navbar-item {
+  position: relative;
+  text-decoration: none;
+  font-family: var(--body-font);
+  font-size: 1.3rem;
+  color: var(--yellow);
+  transition: color 0.3s ease;
+}
+
+.navbar-item:hover {
+  color: var(--blue);
+}
+
+.navbar-item:active {
+  color: var(--white);
+}
+
+.navbar-item.active {
+  color: var(--white);
+  font-weight: bold;
+}
+
+.navbar-item.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background-color: var(--white);
+  border-radius: 2px;
+}
+/* =========================
+   DROPDOWN MENU
+========================= */
+/* Dropdown container fix */
+.group {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%; /* place directly below Portfolio link */
+  left: 0;
+  background-color: #211e1f;
+  border: 1px solid #f4c514;
+  border-radius: 0.5rem;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.4);
+  min-width: 180px;
+  z-index: 50;
+}
+
+/* Keep menu open while hovering anywhere inside the group (fixes flicker) */
+.group:hover .dropdown-menu {
+  display: block;
+}
+
+/* Dropdown links */
+.dropdown-link {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #f4c514;
+  font-family: 'montmid', sans-serif;
+  font-size: 16px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-link:hover {
+  background-color: #f4c514;
+  color: #211e1f;
+  border-radius: 0.3rem;
+}
+
+
+/* ===========================
+   PORTFOLIO SECTION
+=========================== */
+body {
+    background-color: var(--black);
+    color: var(--white);
+    font-family: 'montmid', sans-serif;
+    overflow-x: hidden;
+    padding: 2rem;
+}
+
+.portfolio-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.project-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 4rem;
+    transition: transform 0.3s ease;
+}
+
+.project-section:hover {
+    transform: translateY(-5px);
+}
+
+.project-image-link {
+    display: block;
+    width: 100%;
+    max-width: 800px;
+    border: 5px solid var(--yellow);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s ease;
+}
+
+.project-image-link:hover {
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+}
+
+.project-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.project-description {
+    text-align: left; /* Changed from 'center' to 'left' */
+    margin-top: 1.5rem;
+    max-width: 800px;
+    color: var(--white);
+}
+
+.project-description h3 {
+    font-family: 'bungee', sans-serif;
+    color: var(--yellow);
+    font-size: 2rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.project-description p {
+    font-family: 'montmid', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+
+
+
+
+/* ===========================
+   FOOTER
+=========================== */
+.footer {
+  width: 100%;
+  background-color: var(--blue);
+  color: var #F2EDDD;
+  font-family: var(--body-font);
+  font-size: 12px;
+  text-align: center;
+  padding: 1rem 2;
+  margin-top: auto;
+}

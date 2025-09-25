@@ -1,0 +1,439 @@
+/* ===========================
+    COLOUR PALETTE
+=========================== */
+:root {
+  --yellow: #F4C514;
+  --blue:   #2F5D97;
+  --white:  #F2EDDD;
+  --black:  #211E1F;
+
+  --heading-font: 'bungee', sans-serif;
+  --body-font: 'montmid', sans-serif;
+
+  --heading-size: 3rem;
+  --subheading-size: 1.8rem;
+  --body-size: 1rem;
+}
+
+/* ===========================
+    FONTS
+=========================== */
+@font-face {
+  font-family: 'bungee';
+  src: url('../font/Bungee-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'montmid';
+  src: url('../font/Montserrat-Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'montmids';
+  src: url('../font/Montserrat-MediumItalic.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'montsemi';
+  src: url('../font/Montserrat-SemiBold.ttf') format('truetype');
+}
+
+/* ===========================
+    GLOBAL
+=========================== */
+body {
+  margin: 0;
+  padding: 0;
+  /* Removed background and color to allow Tailwind classes to apply */
+  font-family: var(--body-font);
+  line-height: 1.5;
+}
+
+/* ===========================
+    NAVIGATION
+=========================== */
+.navbar-item {
+  position: relative;
+  text-decoration: none;
+  font-family: var(--body-font);
+  font-size: 1.3rem;
+  color: var(--yellow);
+  transition: color 0.3s ease;
+}
+
+.navbar-item:hover {
+  color: var(--blue);
+}
+
+.navbar-item:active {
+  color: var(--white);
+}
+
+.navbar-item.active {
+  color: var(--white);
+  font-weight: bold;
+}
+
+.navbar-item.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background-color: var(--white);
+  border-radius: 2px;
+}
+/* =========================
+    DROPDOWN MENU
+========================= */
+/* Dropdown container fix */
+.group {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%; /* place directly below Portfolio link */
+  left: 0;
+  background-color: #211e1f;
+  border: 1px solid #f4c514;
+  border-radius: 0.5rem;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.4);
+  min-width: 180px;
+  z-index: 50;
+}
+
+/* Keep menu open while hovering anywhere inside the group (fixes flicker) */
+.group:hover .dropdown-menu {
+  display: block;
+}
+
+/* Dropdown links */
+.dropdown-link {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #f4c514;
+  font-family: 'montmid', sans-serif;
+  font-size: 16px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-link:hover {
+  background-color: #f4c514;
+  color: #211e1f;
+  border-radius: 0.3rem;
+}
+
+/* ===========================
+    ABOUT HERO
+=========================== */
+.about-hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 2rem;
+  background-color: #F2EDDD;
+  /*padding-bottom: -20px;*/
+/*background-image: url("../gallery/pattern2-25.png");*/
+}
+
+.about-hero-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 5px;
+}
+
+.who-is-title {
+  font-family: var(--heading-font);
+  font-size: var(--heading-size);
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  color: var(--yellow);
+}
+
+.who-is-title span {
+  color: var(--black);
+}
+
+.brief h2 {
+  font-family: var(--heading-font);
+  font-size: var(--subheading-size);
+  margin-bottom: 0.5rem;
+  color: var(--black);
+}
+
+.brief p {
+  font-size: var(--body-size);
+  color: var(--black);
+  line-height: 1.6;
+}
+
+/* ===========================
+    PROJECTS GRID LAYOUT
+=========================== */
+.projects-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.project-item {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #F2EDDD; /* text colour */
+}
+
+.project-item.large-item {
+  grid-column: span 2; /* wide item */
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+/* overlay dark */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0);
+  transition: background-color 0.3s ease;
+  z-index: 1;
+}
+
+.project-info {
+  position: absolute;
+  bottom: 0.75rem;
+  left: 0.75rem;
+  font-family: 'montmid', sans-serif;
+  font-size: 0.85rem;
+  line-height: 1.2;
+  font-weight: 500;
+  z-index: 2;
+}
+
+/* Hover effect */
+.project-item:hover .project-image {
+  transform: scale(1.03);
+}
+
+.project-item:hover .overlay {
+  background-color: rgba(0,0,0,0.5);
+}
+
+/* Responsive */
+@media (max-width:1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .project-item.large-item {
+    grid-column: span 2;
+  }
+}
+@media (max-width:768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  .project-item.large-item {
+    grid-column: span 1;
+  }
+  .project-info {
+    font-size: 0.75rem;
+  }
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0); /* Start transparent */
+    transition: background-color 0.3s ease;
+    z-index: 1; /* Below the info text */
+}
+
+/* Hover effect */
+.project-item:hover .project-image {
+    transform: scale(1.03); /* Subtle zoom in */
+}
+
+.project-item:hover .overlay {
+    background-color: rgba(0, 0, 0, 0.5); /* Darken on hover using your black color */
+}
+
+/* ===========================
+    FULLSCREEN OVERLAY FOR ZOOM
+=========================== */
+.fullscreen-overlay {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 100; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+    justify-content: center;
+    align-items: center;
+}
+
+.fullscreen-overlay.active {
+    display: flex; /* Show when active */
+}
+
+.zoomed-image {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain; /* Ensure image fits while maintaining aspect ratio */
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.8);
+}
+
+.close-button {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: var(--white);
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: var(--yellow);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* ===========================
+    RESPONSIVE DESIGN
+=========================== */
+@media (max-width: 1024px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+    }
+    .project-item.large-item {
+        grid-column: span 2; /* Still spans 2 columns */
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-container {
+        padding: 1rem;
+    }
+    .projects-grid {
+        grid-template-columns: 1fr; /* 1 column on mobile */
+        gap: 1rem;
+    }
+    .project-item.large-item {
+        grid-column: span 1; /* Large item reverts to 1 column on mobile */
+    }
+    .project-info {
+        font-size: 0.75rem;
+    }
+    .close-button {
+        font-size: 30px;
+        top: 15px;
+        right: 25px;
+    }
+}
+
+
+
+
+/* Fullscreen overlay hidden by default */
+.fullscreen-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85); /* dark background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 9999; /* above everything */
+}
+
+/* When active, show overlay */
+.fullscreen-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Zoomed image inside overlay */
+.fullscreen-overlay .zoomed-image {
+  max-width: 90%;
+  max-height: 90%;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  border-radius: 8px;
+}
+
+/* Close button (×) style */
+.fullscreen-overlay .close-button {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: #f4c514; /* matches your Hive Lab yellow */
+  cursor: pointer;
+  z-index: 10000;
+  transition: color 0.2s ease;
+}
+
+.fullscreen-overlay .close-button:hover {
+  color: #fff; /* hover effect */
+}
+
+
+
+
+
+
+
+
+
+/* ===========================
+    FOOTER
+=========================== */
+.footer {
+  width: 100%;
+  background-color: var(--blue);
+  color: var(--white); /* Corrected syntax */
+  font-family: var(--body-font);
+  font-size: 12px;
+  text-align: center;
+  padding: 1rem 2;
+  margin-top: auto;
+}

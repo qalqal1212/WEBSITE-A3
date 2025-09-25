@@ -1,0 +1,299 @@
+/* ===========================
+   COLOUR PALETTE
+=========================== */
+:root {
+  --yellow: #F4C514;
+  --blue:   #2F5D97;
+  --white:  #F2EDDD;
+  --black:  #211E1F;
+
+  --heading-font: 'bungee', sans-serif;
+  --body-font: 'montmid', sans-serif;
+
+  --heading-size: 3rem;
+  --subheading-size: 1.8rem;
+  --body-size: 1rem;
+}
+
+/* ===========================
+   FONTS
+=========================== */
+@font-face {
+  font-family: 'bungee';
+  src: url('../font/Bungee-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'montmid';
+  src: url('../font/Montserrat-Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'montmids';
+  src: url('../font/Montserrat-MediumItalic.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'montsemi';
+  src: url('../font/Montserrat-SemiBold.ttf') format('truetype');
+}
+
+/* ===========================
+   GLOBAL
+=========================== */
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--white);          /* light background */
+  color: var(--black);               /* dark text */
+  font-family: var(--body-font);
+  line-height: 1.5;
+}
+
+/* ===========================
+   NAVIGATION
+=========================== */
+.navbar-item {
+  position: relative;
+  text-decoration: none;
+  font-family: var(--body-font);
+  font-size: 1.3rem;
+  color: var(--yellow);
+  transition: color 0.3s ease;
+}
+
+.navbar-item:hover {
+  color: var(--blue);
+}
+
+.navbar-item:active {
+  color: var(--white);
+}
+
+.navbar-item.active {
+  color: var(--white);
+  font-weight: bold;
+}
+
+.navbar-item.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background-color: var(--white);
+  border-radius: 2px;
+}
+/* =========================
+   DROPDOWN MENU
+========================= */
+/* Dropdown container fix */
+.group {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%; /* place directly below Portfolio link */
+  left: 0;
+  background-color: #211e1f;
+  border: 1px solid #f4c514;
+  border-radius: 0.5rem;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.4);
+  min-width: 180px;
+  z-index: 50;
+}
+
+/* Keep menu open while hovering anywhere inside the group (fixes flicker) */
+.group:hover .dropdown-menu {
+  display: block;
+}
+
+/* Dropdown links */
+.dropdown-link {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #f4c514;
+  font-family: 'montmid', sans-serif;
+  font-size: 16px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-link:hover {
+  background-color: #f4c514;
+  color: #211e1f;
+  border-radius: 0.3rem;
+}
+
+
+
+
+
+
+/* ===========================
+   BASE STYLES
+=========================== */
+body {
+    background-color: var(--black);
+    color: var(--white);
+    font-family: 'montmid', sans-serif;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 2rem; /* Global padding for the content area */
+}
+
+.animation-container {
+    max-width: 1200px; /* Adjust as needed for overall width */
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.animation-section {
+    margin-bottom: 6rem; /* Space between sections */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content blocks */
+}
+
+.animation-content-block {
+    width: 100%;
+    max-width: 900px; /* Maximum width for the animation display area */
+    min-height: 450px; /* Minimum height for visual consistency */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    overflow: hidden; /* Ensures content stays within rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    margin-bottom: 2rem;
+}
+
+.yellow-bg {
+    background-color: var(--yellow);
+}
+
+.dark-bg {
+    background-color: var(--black); /* Dark background for the second section */
+    border: 3px solid var(--yellow); /* Yellow border */
+}
+
+.animation-placeholder-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain; /* Ensures image fits within the block without cropping */
+    max-height: 450px; /* Max height to fit within the content block */
+}
+
+/* Custom styling for the "TO" text in the second content block if it's not an image */
+.dark-bg h2 {
+    font-family: 'bungee', sans-serif;
+    font-size: 5rem; /* Large font size for "TO" */
+    color: var(--yellow);
+    text-align: center;
+    line-height: 1;
+}
+
+/* For the very long text like "LAB BUZZ BEYOND LIMITS..." */
+.dark-bg p.long-text {
+    font-family: 'bungee', sans-serif;
+    font-size: 2.5rem; /* Adjust size as needed */
+    color: var(--white);
+    text-align: center;
+    line-height: 1.2;
+    margin-top: 1rem;
+    white-space: pre-wrap; /* Allows text to wrap naturally while preserving formatting */
+}
+
+
+.animation-description {
+    width: 100%;
+    max-width: 900px; /* Match width of content block */
+}
+
+.animation-description.left-align {
+    text-align: left;
+}
+
+.animation-description h3 {
+    font-family: 'montsemi', sans-serif;
+    font-size: 1.8rem;
+    color: var(--white);
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+}
+
+.animation-description p {
+    font-family: 'montmid', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--white);
+}
+
+/* ===========================
+   RESPONSIVE DESIGN
+=========================== */
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+    .animation-section {
+        margin-bottom: 4rem;
+    }
+    .animation-content-block {
+        min-height: 300px; /* Smaller height on mobile */
+    }
+    .animation-description h3 {
+        font-size: 1.4rem;
+    }
+    .animation-description p {
+        font-size: 0.9rem;
+    }
+    .dark-bg h2 {
+        font-size: 3rem;
+    }
+    .dark-bg p.long-text {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .animation-content-block {
+        min-height: 200px;
+    }
+    .animation-description h3 {
+        font-size: 1.2rem;
+    }
+    .dark-bg h2 {
+        font-size: 2.5rem;
+    }
+    .dark-bg p.long-text {
+        font-size: 1.2rem;
+    }
+}
+
+
+/* Update this section in your animation.css file */
+.animation-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This makes the video fill the entire container */
+    display: block;
+}
+
+
+
+
+/* ===========================
+   FOOTER
+=========================== */
+.footer {
+  width: 100%;
+  background-color: var(--blue);
+  color: var #F2EDDD;
+  font-family: var(--body-font);
+  font-size: 12px;
+  text-align: center;
+  padding: 1rem 2;
+  margin-top: auto;
+}
