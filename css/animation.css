@@ -38,13 +38,34 @@
 /* ===========================
    GLOBAL
 =========================== */
-body {
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
   margin: 0;
   padding: 0;
+}
+
+body {
   background: var(--white);          /* light background */
   color: var(--black);               /* dark text */
   font-family: var(--body-font);
   line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===========================
+   PAGE LAYOUT
+=========================== */
+.page-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 /* ===========================
@@ -285,15 +306,17 @@ body {
 
 
 /* ===========================
-   FOOTER
+   FOOTER STYLES
 =========================== */
-.footer {
-  width: 100%;
-  background-color: var(--blue);
-  color: var #F2EDDD;
-  font-family: var(--body-font);
-  font-size: 12px;
-  text-align: center;
-  padding: 1rem 2;
+footer {
   margin-top: auto;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+  z-index: 10;
+  box-sizing: border-box;
 }

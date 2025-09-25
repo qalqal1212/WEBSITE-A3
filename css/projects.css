@@ -38,12 +38,27 @@
 /* ===========================
     GLOBAL
 =========================== */
-body {
+html, body {
+  height: 100%;
   margin: 0;
   padding: 0;
+}
+
+body {
   /* Removed background and color to allow Tailwind classes to apply */
   font-family: var(--body-font);
   line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===========================
+   PAGE LAYOUT
+=========================== */
+.page-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 /* ===========================
@@ -425,15 +440,12 @@ body {
 
 
 /* ===========================
-    FOOTER
+   FOOTER STYLES
 =========================== */
-.footer {
-  width: 100%;
-  background-color: var(--blue);
-  color: var(--white); /* Corrected syntax */
-  font-family: var(--body-font);
-  font-size: 12px;
-  text-align: center;
-  padding: 1rem 2;
+footer {
   margin-top: auto;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  z-index: 10;
 }
